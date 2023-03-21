@@ -20,76 +20,83 @@ body {
     right: 0;
     z-index: 20;
     background-color: white;
-    animation: visible 14s forwards;         
+    animation: visible 3.5s forwards;
+
     .loader-text {
         display: flex;
-        
-    .loader-logo {
-        font-family: 'Shrikhand';
-        font-size: 2rem;
-        animation: left-right 2s cubic-bezier(0.76, -0.15, 0.19, 1.44);
-        animation-iteration-count: 1;
-        gap: 2rem;
-        background: -webkit-linear-gradient(#9356DC, #ae76f3);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
 
-    }
-}
-@for $i from 0 to 8 {
-    .item-#{$i} {
-        animation-delay: #{$i * 0.1}s;
-    }
-}
+        .loader-logo {
+            font-family: 'Shrikhand';
+            font-size: 2rem;
+            animation: left-right 2s cubic-bezier(0.76, -0.15, 0.19, 1.44);
+            background: -webkit-linear-gradient(#9356DC, #ae76f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
 
-    .loader {
-        width:25% ;
-        height: 1rem;
-        border: 1px solid #003A68;
-        padding: 2px;
-        .progress_bar{
-            transform-origin: left;
-            animation: loading 4s forwards;
-            height: 1rem;
-            background: linear-gradient(180deg, #89C8FA,#99E2D0 );
+
+        }
+
+        @for $i from 0 to 8 {
+            .item-#{$i} {
+                animation-delay: ($i * 0.1s);
+            }
         }
     }
 }
-@keyframes visible {
-    0%{
-        visibility:visible;
-    }
-    100% {
-        visibility:hidden;
+
+.loader {
+    width: 25%;
+    height: 1rem;
+    border: 1px solid #003A68;
+    padding: 2px;
+
+    .progress_bar {
+        transform-origin: left;
+        animation: loading 3.5s forwards;
+        height: 1rem;
+        background: linear-gradient(180deg, #89C8FA, #99E2D0);
     }
 }
+
+@keyframes visible {
+    0% {
+        visibility: visible;
+    }
+
+    100% {
+        visibility: hidden;
+    }
+}
+
 @keyframes loading {
-    0%{
-        visibility:visible;
+    0% {
+        visibility: visible;
         transform: scaleX(0);
     }
+
     100% {
-        visibility:hidden;
+        visibility: hidden;
         transform: scaleX(1);
     }
-    
+
 }
+
 @keyframes left-right {
     0% {
-        transform: translateX(0) ;
+        transform: translateX(0);
     }
 
     25% {
         transform: translateX(-1rem);
     }
 
-    75%{
+    75% {
         transform: translateX(1rem);
     }
 
     100% {
         transform: translateX(0);
-        
+
     }
 }
 
@@ -151,7 +158,6 @@ header {
         height: 50px;
         @extend %flex_center;
 
-
         .search-bar {
             display: flex;
             align-items: center;
@@ -171,7 +177,6 @@ header {
                 }
             }
         }
-
     }
 }
 
@@ -256,8 +261,6 @@ main {
                 margin-left: 12%;
                 width: 10%;
             }
-
-
         }
     }
 }
@@ -333,24 +336,31 @@ main {
 
 .fa-heart {
     position: absolute;
-    right: 3rem;
+    right: 8%;
+    font-size: 2rem;
 }
 
 .heart_solid {
     color: transparent;
     background-clip: text;
+    opacity: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     &:hover {
-        transition: 0.6s;
-        color: red;
+        transition: all 1s;
+        opacity: 1;
+        background: -webkit-linear-gradient(#9356DC, #ae76f3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
+
 }
 
 footer {
     background-color: #353535;
     height: 24vh;
     color: white;
-
 
     p,
     .fa-solid {
@@ -378,7 +388,6 @@ footer {
                 margin: 1.2rem 0;
             }
         }
-
 
         .info1 {
             display: flex;
@@ -450,10 +459,8 @@ footer {
             justify-content: space-between;
             animation-name: etape-magic;
             animation-duration: 1s;
-
             &:hover {
                 cursor: pointer;
-
             }
 
             &:hover .validation {
@@ -466,9 +473,13 @@ footer {
                 padding-right: 5rem;
                 transition: 0.5s ease;
             }
-
         }
 
+        @for $i from 1 through 9 {
+            .e-#{$i} {
+                animation-delay: ($i * 0.4s);
+            }
+        }
         .validation {
             display: none;
             position: absolute;
@@ -535,7 +546,6 @@ footer {
     }
 
     header {
-
         .return a i {
             left: 12rem;
         }
@@ -565,6 +575,7 @@ footer {
 
         .restaurant {
             .scrollbar {
+                scroll-behavior: smooth;
                 overflow-x: scroll;
                 margin: 0 5%;
             }
@@ -582,6 +593,7 @@ footer {
 
     .main {
         margin: -3rem 16rem 0;
+
         .menu {
             margin: 0px 25%;
         }
@@ -589,6 +601,10 @@ footer {
         .head {
             justify-content: center;
             gap: 2rem;
+
+            .fa-heart {
+                position: initial;
+            }
         }
     }
 
@@ -639,8 +655,9 @@ footer {
             align-items: center;
         }
     }
+
     .fa-heart {
-        left:18rem;
+        right:1rem;
     }
 }
 
@@ -664,11 +681,7 @@ footer {
     }
 }
 
-@for $i from 1 through 9 {
-    .e-#{$i} {
-        animation-delay: ($i * 0.4s);
-    }
-}
+
 
 @keyframes etape-magic {
     10% {

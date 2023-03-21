@@ -23,7 +23,7 @@ body {
   right: 0;
   z-index: 20;
   background-color: white;
-  animation: visible 14s forwards;
+  animation: visible 3.5s forwards;
 }
 .container-loader .loader-text {
   display: flex;
@@ -32,45 +32,44 @@ body {
   font-family: "Shrikhand";
   font-size: 2rem;
   animation: left-right 2s cubic-bezier(0.76, -0.15, 0.19, 1.44);
-  animation-iteration-count: 1;
-  gap: 2rem;
   background: -webkit-linear-gradient(#9356DC, #ae76f3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.container-loader .item-0 {
+.container-loader .loader-text .item-0 {
   animation-delay: 0s;
 }
-.container-loader .item-1 {
+.container-loader .loader-text .item-1 {
   animation-delay: 0.1s;
 }
-.container-loader .item-2 {
+.container-loader .loader-text .item-2 {
   animation-delay: 0.2s;
 }
-.container-loader .item-3 {
+.container-loader .loader-text .item-3 {
   animation-delay: 0.3s;
 }
-.container-loader .item-4 {
+.container-loader .loader-text .item-4 {
   animation-delay: 0.4s;
 }
-.container-loader .item-5 {
+.container-loader .loader-text .item-5 {
   animation-delay: 0.5s;
 }
-.container-loader .item-6 {
+.container-loader .loader-text .item-6 {
   animation-delay: 0.6s;
 }
-.container-loader .item-7 {
+.container-loader .loader-text .item-7 {
   animation-delay: 0.7s;
 }
-.container-loader .loader {
+
+.loader {
   width: 25%;
   height: 1rem;
   border: 1px solid #003A68;
   padding: 2px;
 }
-.container-loader .loader .progress_bar {
+.loader .progress_bar {
   transform-origin: left;
-  animation: loading 4s forwards;
+  animation: loading 3.5s forwards;
   height: 1rem;
   background: linear-gradient(180deg, #89C8FA, #99E2D0);
 }
@@ -320,17 +319,23 @@ main article .etape .fa-solid {
 
 .fa-heart {
   position: absolute;
-  right: 3rem;
+  right: 8%;
+  font-size: 2rem;
 }
 
 .heart_solid {
   color: transparent;
+  background-clip: text;
+  opacity: 0;
   -webkit-background-clip: text;
-          background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .heart_solid:hover {
-  transition: 0.6s;
-  color: red;
+  transition: all 1s;
+  opacity: 1;
+  background: -webkit-linear-gradient(#9356DC, #ae76f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 footer {
@@ -439,6 +444,33 @@ footer .info .info1 .fa-solid {
   padding-right: 5rem;
   transition: 0.5s ease;
 }
+.main .menu .e-1 {
+  animation-delay: 0.4s;
+}
+.main .menu .e-2 {
+  animation-delay: 0.8s;
+}
+.main .menu .e-3 {
+  animation-delay: 1.2s;
+}
+.main .menu .e-4 {
+  animation-delay: 1.6s;
+}
+.main .menu .e-5 {
+  animation-delay: 2s;
+}
+.main .menu .e-6 {
+  animation-delay: 2.4s;
+}
+.main .menu .e-7 {
+  animation-delay: 2.8s;
+}
+.main .menu .e-8 {
+  animation-delay: 3.2s;
+}
+.main .menu .e-9 {
+  animation-delay: 3.6s;
+}
 .main .menu .validation {
   display: none;
   position: absolute;
@@ -502,6 +534,7 @@ footer .info .info1 .fa-solid {
     justify-content: space-between;
   }
   main .restaurant .scrollbar {
+    scroll-behavior: smooth;
     overflow-x: scroll;
     margin: 0 5%;
   }
@@ -521,6 +554,9 @@ footer .info .info1 .fa-solid {
   .main .head {
     justify-content: center;
     gap: 2rem;
+  }
+  .main .head .fa-heart {
+    position: initial;
   }
   footer {
     height: 145px;
@@ -563,7 +599,7 @@ footer .info .info1 .fa-solid {
     align-items: center;
   }
   .fa-heart {
-    left: 18rem;
+    right: 1rem;
   }
 }
 @keyframes left {
@@ -582,42 +618,6 @@ footer .info .info1 .fa-solid {
     transform: rotate(360deg);
   }
 }
-.e-1 {
-  animation-delay: 0.4s;
-}
-
-.e-2 {
-  animation-delay: 0.8s;
-}
-
-.e-3 {
-  animation-delay: 1.2s;
-}
-
-.e-4 {
-  animation-delay: 1.6s;
-}
-
-.e-5 {
-  animation-delay: 2s;
-}
-
-.e-6 {
-  animation-delay: 2.4s;
-}
-
-.e-7 {
-  animation-delay: 2.8s;
-}
-
-.e-8 {
-  animation-delay: 3.2s;
-}
-
-.e-9 {
-  animation-delay: 3.6s;
-}
-
 @keyframes etape-magic {
   10% {
     opacity: 0;
