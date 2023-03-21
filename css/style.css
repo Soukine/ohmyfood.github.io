@@ -331,7 +331,7 @@ main article .etape .fa-solid {
   -webkit-text-fill-color: transparent;
 }
 .heart_solid:hover {
-  transition: all 1s;
+  transition: all 0.4s;
   opacity: 1;
   background: -webkit-linear-gradient(#9356DC, #ae76f3);
   -webkit-background-clip: text;
