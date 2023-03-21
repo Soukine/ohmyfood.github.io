@@ -348,7 +348,7 @@ main {
     -webkit-text-fill-color: transparent;
 
     &:hover {
-        transition: all 1s;
+        transition: all 0.4s;
         opacity: 1;
         background: -webkit-linear-gradient(#9356DC, #ae76f3);
         -webkit-background-clip: text;
@@ -459,6 +459,7 @@ footer {
             justify-content: space-between;
             animation-name: etape-magic;
             animation-duration: 1s;
+
             &:hover {
                 cursor: pointer;
             }
@@ -480,6 +481,7 @@ footer {
                 animation-delay: ($i * 0.4s);
             }
         }
+
         .validation {
             display: none;
             position: absolute;
@@ -657,7 +659,7 @@ footer {
     }
 
     .fa-heart {
-        right:1rem;
+        right: 1rem;
     }
 }
 
