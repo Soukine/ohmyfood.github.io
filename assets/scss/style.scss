@@ -457,8 +457,10 @@ footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            opacity: 0;
             animation-name: etape-magic;
             animation-duration: 1s;
+            animation-fill-mode: forwards;
 
             &:hover {
                 cursor: pointer;
@@ -478,7 +480,7 @@ footer {
 
         @for $i from 1 through 9 {
             .e-#{$i} {
-                animation-delay: ($i * 0.4s);
+                animation-delay: ($i * 0.1s);
             }
         }
 
@@ -604,9 +606,7 @@ footer {
             justify-content: center;
             gap: 2rem;
 
-            .fa-heart {
-                position: initial;
-            }
+            .fa-heart {}
         }
     }
 
@@ -686,7 +686,7 @@ footer {
 
 
 @keyframes etape-magic {
-    10% {
+    0% {
         opacity: 0;
     }
 
