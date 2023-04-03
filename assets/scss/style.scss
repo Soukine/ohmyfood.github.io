@@ -363,7 +363,8 @@ footer {
     color: white;
 
     p,
-    .fa-solid {
+    .fa-solid,
+    a {
         margin-bottom: 5px;
     }
 
@@ -396,6 +397,11 @@ footer {
             .fa-solid {
                 width: 1.5rem;
             }
+        }
+
+        .info2 a {
+            text-decoration: none;
+            color: white;
         }
     }
 }
@@ -606,7 +612,12 @@ footer {
             justify-content: center;
             gap: 2rem;
 
-            .fa-heart {}
+            #coeur {
+                margin-left: 22px;
+                display: flex;
+                position: relative;
+                align-items: center;
+            }
         }
     }
 
@@ -650,7 +661,7 @@ footer {
         .info2 {
             flex-direction: row;
             display: flex;
-            gap: 2.5rem;
+            gap: 3.5rem;
         }
 
         .info1 {
@@ -658,9 +669,6 @@ footer {
         }
     }
 
-    .fa-heart {
-        right: 1rem;
-    }
 }
 
 @keyframes left {
