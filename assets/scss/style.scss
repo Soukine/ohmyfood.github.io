@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background: white;
+    background: -webkit-linear-gradient(#9356DC, #ae76f3);
     margin: auto;
     position: fixed;
     left: 0;
@@ -29,11 +29,9 @@ body {
             font-family: 'Shrikhand';
             font-size: 2rem;
             animation: left-right 2s cubic-bezier(0.76, -0.15, 0.19, 1.44);
-            background: -webkit-linear-gradient(#9356DC, #ae76f3);
+            background: white;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-
-
         }
 
         @for $i from 0 to 8 {
@@ -47,7 +45,7 @@ body {
 .loader {
     width: 25%;
     height: 1rem;
-    border: 1px solid #003A68;
+    border: 1px solid white;
     padding: 2px;
 
     .progress_bar {
@@ -338,6 +336,7 @@ main {
     position: absolute;
     right: 8%;
     font-size: 2rem;
+
 }
 
 .heart_solid {
@@ -347,8 +346,13 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    &:hover .heart_empty {
+        opacity: 0;
+    }
+
     &:hover {
-        transition: all 0.4s;
+        transition: all .4s;
+        cursor: pointer;
         opacity: 1;
         background: -webkit-linear-gradient(#9356DC, #ae76f3);
         -webkit-background-clip: text;
@@ -393,18 +397,26 @@ footer {
         .info1 {
             display: flex;
             align-items: center;
-
-            .fa-solid {
-                width: 1.5rem;
-            }
         }
 
-        .info2 a {
-            text-decoration: none;
-            color: white;
+        .fa-solid {
+            width: 1.5rem;
         }
     }
+
+    .info2 a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .info1:hover,
+    .info2 p:hover,
+    a:hover {
+        cursor: pointer;
+        color: #ff79da;
+    }
 }
+
 
 /* PALETTE DU GOUT */
 
@@ -650,12 +662,6 @@ footer {
                     margin: 0;
                 }
             }
-        }
-
-        .info1:hover,
-        .info2 p:hover {
-            cursor: pointer;
-            color: #ff79da;
         }
 
         .info2 {

@@ -16,7 +16,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: white;
+  background: -webkit-linear-gradient(#9356DC, #ae76f3);
   margin: auto;
   position: fixed;
   left: 0;
@@ -32,7 +32,7 @@ body {
   font-family: "Shrikhand";
   font-size: 2rem;
   animation: left-right 2s cubic-bezier(0.76, -0.15, 0.19, 1.44);
-  background: -webkit-linear-gradient(#9356DC, #ae76f3);
+  background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -64,7 +64,7 @@ body {
 .loader {
   width: 25%;
   height: 1rem;
-  border: 1px solid #003A68;
+  border: 1px solid white;
   padding: 2px;
 }
 .loader .progress_bar {
@@ -330,8 +330,12 @@ main article .etape .fa-solid {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.heart_solid:hover .heart_empty {
+  opacity: 0;
+}
 .heart_solid:hover {
   transition: all 0.4s;
+  cursor: pointer;
   opacity: 1;
   background: -webkit-linear-gradient(#9356DC, #ae76f3);
   -webkit-background-clip: text;
@@ -371,12 +375,18 @@ footer .info .info1 {
   display: flex;
   align-items: center;
 }
-footer .info .info1 .fa-solid {
+footer .info .fa-solid {
   width: 1.5rem;
 }
-footer .info .info2 a {
+footer .info2 a {
   text-decoration: none;
   color: white;
+}
+footer .info1:hover,
+footer .info2 p:hover,
+footer a:hover {
+  cursor: pointer;
+  color: #ff79da;
 }
 
 /* PALETTE DU GOUT */
@@ -594,11 +604,6 @@ footer .info .info2 a {
     color: white;
     text-decoration: none;
     margin: 0;
-  }
-  footer .info1:hover,
-  footer .info2 p:hover {
-    cursor: pointer;
-    color: #ff79da;
   }
   footer .info2 {
     flex-direction: row;
