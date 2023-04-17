@@ -8,10 +8,8 @@ body {
 }
 
 .container-loader {
-    display: flex;
+    @extend %flex_center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     height: 100%;
     background: -webkit-linear-gradient(#9356DC, #ae76f3);
     margin: auto;
@@ -304,9 +302,7 @@ main {
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
             border-radius: 2px;
             color: #008766;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @extend %flex_center;
         }
 
         .card-photo {
